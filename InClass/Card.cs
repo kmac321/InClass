@@ -12,6 +12,17 @@ namespace InClass
 
         public string Suit { get; set; }
 
+        public Card()
+        {
+
+        }
+
+        public Card(string cardName, string suit)
+        {
+            CardName = cardName;
+            Suit = suit;
+        }
+
         public override string ToString()
         {
             return string.Format($"{CardName} of {Suit}");
