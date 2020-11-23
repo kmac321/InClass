@@ -10,6 +10,13 @@ namespace InClass
     {
         static void Main(string[] args)
         {
+            Deck deck = new Deck();
+
+            deck.DisplayCards();
+
+            deck.Shuffle();
+
+            deck.DisplayCards();
         }
     }
 }

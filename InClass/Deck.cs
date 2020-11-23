@@ -18,8 +18,6 @@ namespace InClass
 
             int suitNumber = 0, deckNumber = 0;
 
-            //1 2 3 4 ...11 12 13 14 15 
-
             //card creation loop
             for (int i = 0; i < 52; i++)
             {
@@ -42,6 +40,7 @@ namespace InClass
                 else
                     c.CardName = suitNumber.ToString();
 
+                Cards.Add(c);
             }
 
         }
@@ -51,6 +50,20 @@ namespace InClass
             foreach (Card card in Cards)
             {
                 Console.WriteLine(card);
+            }
+        }
+
+        public void Shuffle()
+        {
+            Random rng = new Random();
+
+            for (int i = 0; i < 52; i++)
+            {
+                int randomNumber = rng.Next(0, 52);
+                Card temp = Cards[randomNumber];
+                Cards[randomNumber] = Cards[i];
+                Cards[i] = temp;
+
             }
         }
     }
